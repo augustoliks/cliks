@@ -107,9 +107,18 @@ if __name__ == '__main__':
         required=False
     )
 
+    parser.add_argument('-f', '--files-commit', nargs='+', help='Files to add for commit', required=True)
+
     args = parser.parse_args()
 
     if args.commit:
         commit_message = get_commit_message()
         repo.git.add('.')
-        repo.git.commit('.', '-m', commit_message)
+        repo.git.commit('-m', commit_message)
+
+    if args.files_commit:
+        for file in args.files_commit:
+            repo.git.add(file)
+
+        commit_message = get_commit_message()
+        repo.git.commit('-m', commit_message)
