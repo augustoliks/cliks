@@ -107,7 +107,7 @@ if __name__ == '__main__':
         required=False
     )
 
-    parser.add_argument('-f', '--files-commit', nargs='+', help='Files to add for commit', required=True)
+    parser.add_argument('-f', '--files-commit', nargs='+', help='Files to add for commit', required=False)
 
     args = parser.parse_args()
 
