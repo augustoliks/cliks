@@ -2,8 +2,7 @@ import PyInquirer
 from git import Repo
 
 
-repo = Repo('..')
-
+repo = Repo('.')
 is_issue = str(repo.active_branch)[0].isdigit()
 
 if is_issue:
