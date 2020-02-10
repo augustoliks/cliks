@@ -1,5 +1,5 @@
 # cliks
-CLI para facilitar e padronizar rotinas básicas de git.
+CLI for facilitate and standardize commit message.
 
 
 # Format:
