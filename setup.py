@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 
 with open("README.md", "r") as file:
@@ -11,7 +11,7 @@ with open("VERSION", "r") as file:
 
 setup(
     name='cliks',
-    packages=['cliks'], 
+    packages=find_packages(),
     version=version,
     description='CLI for facilitate and standardize commit message.',
     long_description=long_description,
@@ -23,7 +23,7 @@ setup(
     classifiers=[],
     entry_points={
         'console_scripts': [
-            'cliks = src.app'
+            'cliks = src.app:main'
         ]
     }
 )

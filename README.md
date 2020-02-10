@@ -1,4 +1,5 @@
 # cliks
+
 CLI for facilitate and standardize commit message.
 
 
@@ -52,8 +53,8 @@ Are additionnal adjective as 'refactor' 'minor' 'cosmetic'. They are preceded wi
 
 # Example:
 
-- git commit -m "feat(ansible): adding configuration with common roles #INF-4"
-- git commit -m "fix(docker): disabling systemd and installing sysvinit #noticket"
-- git commit -m "docs(): removing unwanted files on the doc #noticket"
-- git commit -m 'Please note that multi-line commit message are supported, and only the first line will be considered as the "summary" of the commit message. So tags, and other rules only applies to the summary.  The body of the commit message will be displayed in the changelog without reformatting.'
+- `git commit -m "feat(ansible):` adding configuration with common roles #INF-4"
+- `git commit -m "fix(docker):` disabling systemd and installing sysvinit #noticket"
+- `git commit -m "docs():` removing unwanted files on the doc #noticket"
+- `git commit -m` 'Please note that multi-line commit message are supported, and only the first line will be considered as the "summary" of the commit message. So tags, and other rules only applies to the summary.  The body of the commit message will be displayed in the changelog without reformatting.'
 

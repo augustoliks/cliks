@@ -42,7 +42,7 @@ class NoEmpty(PyInquirer.Validator):
 
 def get_commit_message():
     global id_issue
-    
+
     questions = [
         {
             'type': 'list',
@@ -103,7 +103,7 @@ def get_commit_message():
     return TEMPLATE.format_map(answers)
 
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(description='CLI for facilitate and standardize commit message')
 
     parser.add_argument(
@@ -120,3 +120,7 @@ if __name__ == '__main__':
     if args.commit:
         commit_message = get_commit_message()
         print('\n\n' + commit_message + '\n\n')
+
+
+if __name__ == '__main__':
+    main()
