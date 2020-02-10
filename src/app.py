@@ -3,12 +3,16 @@ import argparse
 from git import Repo
 
 
-repo = Repo('.')
-is_issue = str(repo.active_branch)[0].isdigit()
+try:
+    repo = Repo('.')
+    is_issue = str(repo.active_branch)[0].isdigit()
 
-if is_issue:
-    id_issue = str(repo.active_branch)[0]
-else:
+    if is_issue:
+        id_issue = str(repo.active_branch)[0]
+    else:
+        id_issue = 'nt'
+
+except Exception as ignored:
     id_issue = 'nt'
 
 
@@ -37,6 +41,8 @@ class NoEmpty(PyInquirer.Validator):
 
 
 def get_commit_message():
+    global id_issue
+    
     questions = [
         {
             'type': 'list',
@@ -98,7 +104,7 @@ def get_commit_message():
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='CLI for facilitate and standardize basically git routines')
+    parser = argparse.ArgumentParser(description='CLI for facilitate and standardize commit message')
 
     parser.add_argument(
         '-c', '--commit',
@@ -113,12 +119,4 @@ if __name__ == '__main__':
 
     if args.commit:
         commit_message = get_commit_message()
-        repo.git.add('.')
-        repo.git.commit('-m', commit_message)
-
-    if args.files_commit:
-        for file in args.files_commit:
-            repo.git.add(file)
-
-        commit_message = get_commit_message()
-        repo.git.commit('-m', commit_message)
+        print('\n\n' + commit_message + '\n\n')
